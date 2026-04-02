@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://ceqpfmels5wjp"]
+[gd_scene load_steps=38 format=3 uid="uid://ceqpfmels5wjp"]
 
 [ext_resource type="Texture2D" uid="uid://cvs4c3rmee8vx" path="res://assets/Tiny Swords (Free Pack)/Units/Blue Units/Warrior/Warrior_Attack1.png" id="1_p2mc3"]
 [ext_resource type="Script" uid="uid://dl36jnp8mxt18" path="res://scripts/blue_warrior.gd" id="1_uwwwp"]
@@ -232,29 +232,32 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uwwwp"]
-radius = 25.5
-height = 78.0
+radius = 17.5
+height = 58.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lidxy"]
 size = Vector2(80, 84)
 
-[node name="blue_warrior" type="CharacterBody2D" unique_id=164937779 groups=["Blue"]]
+[node name="blue_warrior" type="CharacterBody2D" groups=["Blue"]]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_uwwwp")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=936086518]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_3kb5f")
 animation = &"attack2"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=224701774]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.5, -5)
 shape = SubResource("CapsuleShape2D_uwwwp")
 
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1527090151]
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+avoidance_enabled = true
+avoidance_layers = 2
+avoidance_mask = 2
 
-[node name="hitbox" type="Area2D" parent="." unique_id=6451729]
+[node name="hitbox" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=1222667670]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
 position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_lidxy")
 debug_color = Color(0.96011823, 0, 0.5205364, 0.41960785)

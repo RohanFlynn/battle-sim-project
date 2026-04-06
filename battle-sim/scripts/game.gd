@@ -16,8 +16,8 @@ func start():
 
 func killb():
 	if get_tree().get_node_count_in_group("Blue") == 1:
-		get_tree().call_deferred("reload_current_scene")
+		get_tree().call_group("ending_ui", "end", "Red")
 
 func killr():
 	if get_tree().get_node_count_in_group("Red") == 1:
-		get_tree().call_deferred("reload_current_scene")
+		get_tree().call_group("ending_ui", "end", "Blue")

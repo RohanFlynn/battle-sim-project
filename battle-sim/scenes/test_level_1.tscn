@@ -868,14 +868,14 @@ sources/0 = SubResource("TileSetAtlasSource_3xdft")
 
 [sub_resource type="Gradient" id="Gradient_64tjs"]
 offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0, 0, 1, 0.58431375)
+colors = PackedColorArray(0, 0, 1, 0.29411766)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_3xdft"]
 gradient = SubResource("Gradient_64tjs")
 
 [sub_resource type="Gradient" id="Gradient_3xdft"]
 offsets = PackedFloat32Array(0)
-colors = PackedColorArray(1, 0, 0, 0.6039216)
+colors = PackedColorArray(1, 0, 0, 0.29411766)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_2tvoo"]
 gradient = SubResource("Gradient_3xdft")

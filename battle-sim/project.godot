@@ -30,6 +30,8 @@ Red="Red Troops"
 placing_ui=""
 game=""
 ending_ui=""
+gl=""
+walls=""
 
 [physics]
 

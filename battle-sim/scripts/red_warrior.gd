@@ -1,12 +1,12 @@
 extends CharacterBody2D
 
 
-const SPEED = -300.0
+const SPEED = -400.0
 @onready var asprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var hitbox: Area2D = $hitbox
 @onready var blue = get_tree().get_first_node_in_group("Blue")
-var speed = 80
+var speed = 90
 var direction: Vector2
 var can_move = false
 var attacking = false
@@ -59,7 +59,7 @@ func animate():
 		var bodies = hitbox.get_overlapping_bodies()
 		for body in bodies:
 			if body and body.is_in_group("Blue"):
-				body.hit(direction)
+				body.hit(direction, 1)
 				break
 
 
@@ -69,10 +69,10 @@ func _on_hitbox_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index
 		attacking = true
 
 
-func hit(d):
+func hit(d, dam):
 	velocity.x += 40 * d.x
 	velocity.y += 40 * d.y
-	hit_count += 1
+	hit_count += dam
 	if hit_count >= 3:
 		get_tree().call_group("game", "killr")
 		queue_free()
@@ -97,3 +97,4 @@ func get_closest_enemy():
 func start():
 	can_move = true
 	starting = true
+	

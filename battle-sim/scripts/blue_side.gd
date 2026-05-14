@@ -14,6 +14,7 @@ func _process(delta: float) -> void:
 
 func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed:
+		get_tree().call_group("gl", "update", 0)
 		p = get_global_mouse_position()
 		var i_b = blue_dude.instantiate()
 		get_parent().add_child(i_b)

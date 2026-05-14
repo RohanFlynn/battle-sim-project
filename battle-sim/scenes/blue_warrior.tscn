@@ -244,7 +244,7 @@ script = ExtResource("1_uwwwp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=955019376]
 sprite_frames = SubResource("SpriteFrames_3kb5f")
-animation = &"attack2"
+animation = &"attack1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=859542070]
 position = Vector2(-1.5, -5)
@@ -253,8 +253,11 @@ shape = SubResource("CapsuleShape2D_uwwwp")
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1555954373]
 avoidance_enabled = true
 radius = 50.0
+max_speed = 1000.0
 avoidance_layers = 2
 avoidance_mask = 2
+debug_use_custom = true
+debug_path_custom_color = Color(0, 0, 1, 1)
 
 [node name="hitbox" type="Area2D" parent="." unique_id=795183260]
 
